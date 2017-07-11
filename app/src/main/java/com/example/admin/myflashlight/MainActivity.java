@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
 
     private Camera camera;
     private boolean isFlashOn;
-    private boolean hasFlash;
     private Camera.Parameters params;
 
     @Override
@@ -27,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         btnSwitch = (ImageButton) findViewById(R.id.btnSwitch);
 
         // First check if device is supporting flashlight or not
-        hasFlash = getApplicationContext().getPackageManager()
+        boolean hasFlash = getApplicationContext().getPackageManager()
                 .hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
 
         if (!hasFlash) {
